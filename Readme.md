@@ -1,7 +1,7 @@
 # Blog
 
 ## Overview
-- The main purpose of this project is to build a webpage to create, edit, delete and relate articles with its category. The application provides knowledge about my studies on `Node.js`, `EJS` and `MySQL`/.
+The main purpose of this project is to build a webpage to create, edit, delete and relate articles with its category. The application provides knowledge about my studies on `Node.js`, `EJS` and `MySQL`.
 
 <hr>
 
@@ -10,9 +10,9 @@
 - Dotenv => Hide keys;
 - EJS => Render HTML;
 - Express => Flexible framework;
+- TinyMCE => Text editor;
 - Sequelize => Connect database;
 - Slugify => Create string without space;
-
 
 <hr>
 
@@ -36,8 +36,18 @@
     - `DATABASE_HOST = localhost`;
     - `DATABASE_DIALECT = mysql`;
 
+<hr>
+
 ## Running the application
 
 - Run: `npm install`;
 - Run: `nodemon server.js`;
 - On web browser: http://localhost:3000/
+
+<hr>
+
+## License
+<br>
+<p>
+    <img style="width:50px;height:auto;"src="https://cdn.worldvectorlogo.com/logos/tinymce.svg" href="https://www.tiny.cloud/get-tiny/self-hosted/">
+</p>
