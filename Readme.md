@@ -8,9 +8,10 @@
 ## Libraries 
 
 - Dotenv => Hide keys;
+- EJS => Render HTML;
 - Express => Flexible framework;
 - Sequelize => Connect database;
-- EJS => Render HTML;
+- Slugify => Create string without space;
 
 
 <hr>

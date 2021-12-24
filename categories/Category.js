@@ -11,4 +11,6 @@ const Category = connection.define('categories', {
     }
 });
 
+Category.sync({force:false}).then(() => {}); //Create table in case of it dos not exist
+
 module.exports = Category;

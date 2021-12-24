@@ -1,12 +1,50 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const Category = require("./Category");
+const slugify = require("slugify");
 
-router.get("/categories", (req,res) => { 
-    res.send("Category route")
+router.get("/admin/categories/new", (req,res) => {
+    res.render("admin/categories/new");
 });
 
-router.get("/admin/categories/new", (req,res) => { 
-    res.send("Create new category route")
+router.post("/categories/save", (req, res) => {
+    var title = req.body.title;
+    if(title != undefined){
+        Category.create({
+            title: title,
+            slug: slugify(title) //take out the space in between
+        }).then(() => {
+            res.redirect("/");
+        })
+    }else{
+        res.redirect("/admin/categories/new")
+    }
+});
+
+router.get("/admin/categories", (req,res) => {
+
+    Category.findAll().then(categories => {
+        res.render("admin/categories/index", {categories: categories});
+    });
+})
+
+router.post("/categories/delete", (req, res) => {
+    var id = req.body.id;
+    if(id != undefined){
+        if(!isNaN(id)){ //is it a number or not?
+            Category.destroy({
+                where: {
+                    id: id
+                }
+            }).then(() => {
+                res.redirect("/admin/categories");
+            });
+        }else{
+            res.redirect("/admin/categories");
+        }
+    }else{
+        res.redirect("/admin/categories");
+    }
 });
 
 module.exports = router;
