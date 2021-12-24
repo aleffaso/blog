@@ -51,3 +51,6 @@ The main purpose of this project is to build a webpage to create, edit, delete a
 <p>
     <img style="width:50px;height:auto;"src="https://cdn.worldvectorlogo.com/logos/tinymce.svg" href="https://www.tiny.cloud/get-tiny/self-hosted/">
 </p>
+<p> 
+<img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
+</p>
