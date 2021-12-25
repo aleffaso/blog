@@ -63,7 +63,9 @@ router.get("/admin/articles/edit/:id", (req,res) => {
     Article.findByPk(id).then(article => { //Search article by its ID
         if(article != undefined){
 
-            res.render("admin/articles/edit", {article: article});
+            Category.findAll().then(categories => {
+                res.render("admin/articles/edit", {article: article, categories: categories});
+            });
 
         }else{
             res.redirect("/admin/articles");
@@ -77,14 +79,56 @@ router.post("/articles/update", (req,res) => {
     var id = req.body.id;
     var title = req.body.title;
     var body = req.body.body;
+    var category = req.body.category
 
-    Article.update({title: title, slug:slugify(title), body: body},{ //Update title, slug and body by specified id
+    Article.update({title: title, slug:slugify(title), body: body, categoryId:category},{ //Update title, slug and body by specified id
         where: {
             id:id
         }
     }).then(() => {
         res.redirect("/admin/articles");
-    })
+    }).catch(err => {
+        res.redirect("/admin/articles");
+    });
+});
+
+//count page
+router.get("/articles/page/:num", (req, res) => {
+    var page = req.params.num;
+    var maxPage = 4
+    var offset = 0;
+
+    if(isNaN(page) || page == 1){
+        offset = 0;
+    }else{
+        offset = (parseInt(page)-1)*maxPage;
+    }
+
+    Article.findAndCountAll({
+        limit:maxPage,
+        offset: offset,
+        order:[
+            ['id', 'DESC']
+            ]
+    }).then(articles => {
+
+        var next;
+        if(offset + maxPage >= articles.count){
+            next = false;
+        }else{
+            next = true;
+        };
+
+        var result = {
+            page: parseInt(page),
+            next: next,
+            articles: articles
+        };
+
+        Category.findAll().then(categories => {
+            res.render("admin/articles/page", {result: result, categories: categories});
+        });
+    });
 });
 
 module.exports = router;

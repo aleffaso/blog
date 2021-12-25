@@ -13,6 +13,11 @@
                 <br>
                 <input class="form-control" type="text" name="body" placeholder="Write your article here"  id="article" value="<%= article.body %>">
                 <br>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => {%>
+                        <option value="<%= category.id %>"><%= category.title %></option>
+                    <% }) %>
+                </select>
 
                 <input type="hidden" name="id" value="<%=article.id %>"> <br>
 

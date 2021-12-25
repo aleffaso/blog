@@ -2,12 +2,12 @@
 <%- include ("partials/homenavbar.ejs") %>
 
 <body>
-    <div class="container mt-4">
+    <div class="container mt-2">
         <hr>
         <div class="jumbotron text-center">
             <h1 class="display-4">Welcome</h1>
             <p class="lead">This is a simple blog that I built</p>
-            <hr class="my-4">
+            <hr class="my-2">
             <p>I hope you can find what you're looking for</p>
           </div>
         
@@ -17,13 +17,19 @@
                     <h2><%= article.title %></h2>
                 </div>
                 <div class="card-body">
-                    <a href="/<%= article.slug %>" class="btn btn-success">Read</a>
+                    <a href="/<%= article.slug%>" class="btn btn-success">Read</a>
                 </div>
             </div>
             <br>
-            <% }) %>
+        <% }) %>
+
+        <a type="button" style="float:right" class="btn btn-dark" href="/articles/page/1">
+            Next >>
+        </a>
+
 
     </div>
+
 </body>
 
 <%- include ("partials/footer.ejs") %>
