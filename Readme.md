@@ -7,9 +7,11 @@ The main purpose of this project is to build a webpage to create, edit, delete a
 
 ## Libraries 
 
+- Bcrypt => Crypt passwords;
 - Dotenv => Hide keys;
 - EJS => Render HTML;
 - Express => Flexible framework;
+- Express-sessions => Create auth sessions;
 - TinyMCE => Text editor;
 - Sequelize => Connect database;
 - Slugify => Create string without space;
@@ -35,13 +37,15 @@ The main purpose of this project is to build a webpage to create, edit, delete a
     - `DATABASE_TABLE = blog`;
     - `DATABASE_HOST = localhost`;
     - `DATABASE_DIALECT = mysql`;
+    - `DATABASE_TIMEZONE = -03:00;`;
+    - `SESSION_SECRET = passwordSecret`;
 
 <hr>
 
 ## Running the application
 
 - Run: `npm install`;
-- Run: `nodemon server.js`;
+- Run: `nodemon index.js`;
 - On web browser: http://localhost:3000/
 
 <hr>

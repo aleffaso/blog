@@ -1,0 +1,24 @@
+<%- include ("../../partials/header.ejs") %>
+<%- include ("../../partials/navbar.ejs") %>
+
+<div class="container d-flex justify-content-center">
+    <div class="card mt-4 text-center" style="width: 18rem;">
+        <div class="card-header">
+            <h2>User register</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/users/create">
+                <input class="form-control" name="email" type="email" placeholder="email@example.com">
+                <br>
+                <input class="form-control" name="password" type="password" placeholder="Password">
+                <br>
+                <input class="form-control" name="passwordCheck" type="password" placeholder="Confirm password">
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Register</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include ("../../partials/footer.ejs") %>

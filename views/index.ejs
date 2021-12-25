@@ -2,14 +2,27 @@
 <%- include ("partials/homenavbar.ejs") %>
 
 <body>
-    <div class="container mt-2">
+    <div class="container mt-2 ">
         <hr>
         <div class="jumbotron text-center">
             <h1 class="display-4">Welcome</h1>
             <p class="lead">This is a simple blog that I built</p>
-            <hr class="my-2">
-            <p>I hope you can find what you're looking for</p>
-          </div>
+        </div>
+        <hr class="my-2">
+        <div class="container mb-4 text-center">
+            <div class="row">
+                <div class="col-sm">
+                    <p>Register now and start today!</p>
+                    <a class="btn btn-success" href="/users/create">Register</a>
+                </div>
+
+                <div class="col-sm">
+                    <p>Login now and create your world</p>
+                    <a class="btn btn-success" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+        <hr class="my-2">
         
         <% articles.forEach(article => {%>
             <div class="card">

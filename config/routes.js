@@ -1,7 +1,19 @@
 const express = require("express");
 const router = express.Router();
+const session = require('express-session');
 const Article = require("../articles/Article");
 const Category = require("../categories/Category");
+const User = require("../users/User")
+
+//Sessions
+router.get("/session", (req,res) => { //save information in cookies on server
+
+});
+
+router.get("/read", (req,res) => { //read session generated
+
+});
+
 
 //main page
 router.get('/', (req,res) => {
