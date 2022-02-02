@@ -36,13 +36,13 @@ The main purpose of this project is to build a webpage to create, edit, delete a
 
 6. Add `.env` file into main folder, and put:
 
-    - `DATABASE_PASSWORD = YourPassword`;
-    - `DATABASE_USER = root`;
-    - `DATABASE_TABLE = blog`;
-    - `DATABASE_HOST = localhost`;
-    - `DATABASE_DIALECT = mysql`;
-    - `DATABASE_TIMEZONE = -03:00;`;
-    - `SESSION_SECRET = passwordSecret`;
+    - `DATABASE_PASSWORD = YourPassword`
+    - `DATABASE_USER = root`
+    - `DATABASE_TABLE = blog`
+    - `DATABASE_HOST = localhost`
+    - `DATABASE_DIALECT = mysql`
+    - `DATABASE_TIMEZONE = -03:00`
+    - `SESSION_SECRET = passwordSecret`
 
 <hr>
 

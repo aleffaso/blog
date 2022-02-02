@@ -7,13 +7,12 @@ const connection = require("./db/db")
 const router = require("./config/routes"); // organize routes
 const categoriesController = require("./categories/CategoriesController");
 const articlesController = require("./articles/ArticlesController");
-const usersController = require("./Users/UsersController");
+const usersController = require("./users/UsersController");
 
 dotenv.config({path: './.env'})
 
 //View engine
 app.set('view engine', 'ejs');
-
 
 //Sessions
 app.use(session({
@@ -43,6 +42,6 @@ app.use("/", usersController);
 app.use("/", router)
 
 //server
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running")
 });
